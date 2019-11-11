@@ -1,0 +1,1 @@
+cmd='/usr/lib/qt5/bin/qmake;/home/naira/Documentos/GCompris-ESO/GCompris-qt/external/qml-box2d/box2d.pro'

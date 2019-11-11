@@ -50,7 +50,7 @@ ActivityBase {
 
     pageComponent: Image {
         id: background
-        source: "qrc:/gcompris/src/activities/programmingMaze/resource/background.svg"
+        source: "qrc:/gcompris/src/activities/programmingMaze/resource/farm-animals.svg"
         fillMode: Image.PreserveAspectCrop
         sourceSize.width: parent.width
 
@@ -59,8 +59,8 @@ ActivityBase {
 
         property bool insertIntoMain: true
         property alias items: items
-        property int buttonWidth: background.width / 10
-        property int buttonHeight: background.height / 15.3
+        property int buttonWidth: background.width / 15 //tamanho dos botoes
+        property int buttonHeight: background.height / 25.3
 
         Component.onCompleted: {
             activity.start.connect(start)
@@ -159,7 +159,8 @@ ActivityBase {
         Rectangle {
             id: constraintInstruction
             anchors.left: parent.left
-            anchors.bottom: runCode.top
+            anchors.top: parent.top
+            anchors.topMargin: background.height * 0.05
             width: parent.width / 2.3
             height: parent.height / 8.9
             radius: 10
@@ -194,8 +195,8 @@ ActivityBase {
                 fontSizeMode: Text.Fit
                 wrapMode: Text.WordWrap
 
-                readonly property string resetTuxInstructionText: qsTr("Click on Tux or press Enter key to reset it or RELOAD button to reload the level.")
-                readonly property string constraintInstructionText: qsTr("Reach the fish in less than %1 instructions.").arg(items.maxNumberOfInstructionsAllowed + 1)
+                readonly property string resetTuxInstructionText: qsTr("Clique no personagem ou pressione a tecla Enter para redefini-lo ou o botão REINICIAR para recarregar o nível.")
+                readonly property string constraintInstructionText: qsTr("Alcance o alvo com menos de %1 instruções.").arg(items.maxNumberOfInstructionsAllowed + 1)
 
                 text: items.isTuxMouseAreaEnabled ? resetTuxInstructionText : constraintInstructionText
             }
@@ -206,42 +207,52 @@ ActivityBase {
             onClicked: constraintInstruction.changeConstraintInstructionOpacity()
         }
 
-        Repeater {
-            id: mazeModel
 
-            anchors.left: parent.left
+        Rectangle{
+            id: areadetrilha
             anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.topMargin: background.height/2.2
 
-            Image {
-                x: modelData.x * width
-                y: modelData.y * height
-                width: background.width / 10
-                height: (background.height - background.height / 10) / 10
-                source: Activity.reverseCountUrl + "iceblock.svg"
+
+            Repeater {
+                id: mazeModel
+
+                anchors.left: areadetrilha.left
+                anchors.top: areadetrilha.top
+
+                Image { //imagem do tronco definindo a trilha
+                    x: modelData.x * width
+                    y: modelData.y * height
+                    width: background.width / 10
+                    height: (background.height - background.height / 10) / 10
+                    source: Activity.url + "grama.svg"
+                }
             }
-        }
 
-        Image {
-            id: fish
-            sourceSize.width: background.width / 12
-            source: Activity.reverseCountUrl + "blue-fish.svg"
-        }
 
-        Image {
-            id: player
-            source: "qrc:/gcompris/src/activities/maze/resource/tux_top_south.svg"
-            sourceSize.width: background.width / 12
-            z: 1
-            property int duration: 1000
-            readonly property real playerCenterX: x + width / 2
-            readonly property real playerCenterY: y + height / 2
+            Image { //imagem personagem alvo
+                id: fish
+                sourceSize.width: background.width / 10
+                source: Activity.url + "lama2.svg"
+            }
 
-            MouseArea {
-                id: tuxMouseArea
-                anchors.fill: parent
-                enabled: items.isTuxMouseAreaEnabled
-                onClicked: {
-                    Activity.initLevel()
+            Image {//imagem personagem principal
+                id: player
+                source: "qrc:/gcompris/src/activities/programmingMaze/resource/pigteste.svg"
+                sourceSize.width: background.width / 12
+                z: 1
+                property int duration: 1000
+                readonly property real playerCenterX: x + width / 2
+                readonly property real playerCenterY: y + height / 2
+
+                MouseArea {
+                    id: tuxMouseArea
+                    anchors.fill: parent
+                    enabled: items.isTuxMouseAreaEnabled
+                    onClicked: {
+                        Activity.initLevel()
+                    }
                 }
             }
         }
@@ -263,17 +274,19 @@ ActivityBase {
 
         HeaderArea {
             id: mainFunctionHeader
-            headerText: qsTr("Main function")
+            headerText: qsTr("Quando começar")
             headerOpacity: background.insertIntoMain ? 1 : 0.5
             onClicked: background.insertIntoMain = true
             anchors.top: parent.top
             anchors.right: parent.right
+            anchors.topMargin: background.height * 0.05
+            anchors.rightMargin: background.width * 0.02
         }
 
         CodeArea {
             id: mainFunctionCodeArea
             currentModel: mainFunctionModel
-            anchors.right: parent.right
+            anchors.horizontalCenter: mainFunctionHeader.horizontalCenter
             anchors.top: mainFunctionHeader.bottom
 
             onTabKeyPressed: {
@@ -291,18 +304,20 @@ ActivityBase {
 
         HeaderArea {
             id: procedureHeader
-            headerText: qsTr("Procedure")
+            headerText: qsTr("Função")
             headerOpacity: !background.insertIntoMain ? 1 : 0.5
             visible: procedureCodeArea.visible
             onClicked: background.insertIntoMain = false
             anchors.top: mainFunctionCodeArea.bottom
             anchors.right: parent.right
+            //anchors.topMargin: background.height * 0.05
+            anchors.rightMargin: background.width * 0.02
         }
 
         CodeArea {
             id: procedureCodeArea
             currentModel: procedureModel
-            anchors.right: parent.right
+            anchors.horizontalCenter: procedureHeader.horizontalCenter
             anchors.top: procedureHeader.bottom
             visible: items.currentLevelContainsProcedure
 
@@ -320,7 +335,7 @@ ActivityBase {
             id: runCode
             width: background.width / 10
             height: background.height / 10
-            anchors.right: instructionArea.right
+            anchors.horizontalCenter: instructionArea.horizontalCenter
             anchors.bottom: bar.top
             anchors.margins: 10 * ApplicationInfo.ratio
 

@@ -31,18 +31,22 @@ GridView {
     cellWidth: background.buttonWidth
     cellHeight: background.buttonHeight
 
+    //posicao na pag
     anchors.left: parent.left
-    anchors.top: mazeModel.bottom
-    anchors.topMargin: background.height * 0.4
+    anchors.top: parent.top
+    anchors.leftMargin: background.width * 0.45
+    //anchors.rightMargin: background.width / 5
+    //anchors.verticalCenter: parent.verticalCenter
+    anchors.topMargin: background.height * 0.05
 
     interactive: false
     model: instructionModel
 
     header: HeaderArea {
-        width: instructionArea.width
-        height: background.height / 11
+        width: background.width * 0.25//instructionArea.width
+        height: background.height / 15
         headerOpacity: 1
-        headerText: qsTr("Choose the instructions")
+        headerText: qsTr("Área de Instruções")
     }
 
     property string instructionToInsert

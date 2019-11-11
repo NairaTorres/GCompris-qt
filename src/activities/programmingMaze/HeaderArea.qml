@@ -22,12 +22,12 @@ import QtQuick 2.6
 import GCompris 1.0
 import "../../core"
 
-Rectangle {
+Rectangle {//header area
     id: header
-    width: background.width * 0.4
-    height: background.height / 10
+    width: background.width * 0.25
+    height: background.height / 15
     border.width: 2 * ApplicationInfo.ratio
-    border.color: "black"
+    border.color: "transparent"
     color: "transparent"
 
     property real headerOpacity
@@ -39,7 +39,7 @@ Rectangle {
         width: parent.width - 2 * parent.border.width
         height: parent.height - 2 * parent.border.width
         anchors.centerIn: parent
-        source: "qrc:/gcompris/src/activities/guesscount/resource/backgroundW02.svg"
+        source: "qrc:/gcompris/src/activities/programmingMaze/resource/wood.svg"
         opacity: header.headerOpacity
 
         GCText {

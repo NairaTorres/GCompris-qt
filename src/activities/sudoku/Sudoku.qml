@@ -142,6 +142,7 @@ ActivityBase {
                         state: mState
                     }
                 }
+               //console.log("repeater");
             }
         }
 

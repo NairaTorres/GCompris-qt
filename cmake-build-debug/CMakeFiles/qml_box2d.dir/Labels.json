@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d-complete.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-install.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-mkdir.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-download.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-update.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-patch.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-configure.rule"
+		},
+		{
+			"file" : "/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"qml_box2d"
+		],
+		"name" : "qml_box2d"
+	}
+}

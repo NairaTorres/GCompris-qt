@@ -1,0 +1,13 @@
+# Target labels
+ qml_box2d
+# Source files and their labels
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/CMakeFiles/qml_box2d-complete.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-install.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-mkdir.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-download.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-update.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-patch.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-configure.rule
+/home/naira/Documentos/GCompris-ESO/GCompris-qt/cmake-build-debug/qml_box2d-prefix/src/qml_box2d-stamp/qml_box2d-build.rule

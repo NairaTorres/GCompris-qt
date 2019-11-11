@@ -94,27 +94,27 @@ var instructionComponents = {
 
 var mainTutorialInstructions = [
             {
-                "instruction": qsTr("<b><h7>Instruction Area:</b></h7>" +
-                                    "There are 3 instructions which you have to use to code and make Tux reach the fish:" +
-                                    "<b><li>1. Move forward:</b> Moves Tux one step forward in the direction it is facing.</li>" +
-                                    "<b><li>2. Turn left:</b> Turns Tux in the left direction from where it is facing.</li>" +
-                                    "<b><li>3. Turn right:</b> Turns Tux in the right direction from where it is facing.</li>"),
+                "instruction": qsTr("<b><h7>Área de Instruções:</b></h7>" +
+                                    "Existem três instruções que você deve usar para codificar e fazer o personagem alcançar o peixe:" +
+                                    "<b><li>1. Avance:</b> Mova o personagem um passo à frente.</li>" +
+                                    "<b><li>2. Virar à esquerda:</b> Gire o personagem na direção à esquerda.</li>" +
+                                    "<b><li>3. Virar à direita:</b> Gire o personagem na direção à direita.</li>"),
                 "instructionImage": "qrc:/gcompris/src/activities/programmingMaze/resource/tutorial1.png"
             },
             {
-                "instruction": qsTr("<b><h7>Main Function:</b></h7>" +
-                                    "<li>-The execution of code starts here on running.</li>" +
-                                    "<li>-Click on any instruction in the <b>instruction area</b> to add them to the <b>Main Function</b></li>" +
-                                    "<li>-The instructions will execute in order until there's none left, dead-end or Tux reaches the fish.</li>"),
+                "instruction": qsTr("<b><h7>Quando começar:</b></h7>" +
+                                    "<li>-A execução do código começa aqui</li>" +
+                                    "<li>-Clique em qualquer instrução na área de instruções</b> para adicioná-los ao <b>Quando começar.</b></li>" +
+                                    "<li>-As instruções serão executadas em ordem até não sobrar nada ou o personagem chegar ao alvo.</li>"),
                 "instructionImage": "qrc:/gcompris/src/activities/programmingMaze/resource/tutorial2.png"
             },
         ]
 
 var procedureTutorialInstructions = [
             {
-                "instruction": qsTr("<b><h7>Procedure:</b></h7>" +
-                                    "<li>-<b>Procedure</b> is a reusable set of instructions which can be <b>used in a code by calling it where needed.</b></li>" +
-                                    "<li>-To <b>switch</b> between the <b>Procedure area</b> and <b>Main Function area</b> to add your code, click on the label <b>Procedure</b> or <b>Main Function</b>.</li>"),
+                "instruction": qsTr("<b><h7>Procedimento:</b></h7>" +
+                                    "<li>-<b>Procedimento</b> é um conjunto reutilizável de instruções que pode ser usado em um código, chamando-o quando necessário.</b></li>" +
+                                    "<li>-Para <b>alternar</b> entre a área <b>Função </b>e <b>Quando começar</b> para adicionar seu código clique em <b>Função </b> ou<b>Quando começar</b>.</li>"),
                 "instructionImage": "qrc:/gcompris/src/activities/programmingMaze/resource/tutorial3.png"
             },
         ]
@@ -158,13 +158,13 @@ function createInstructionObjects(instructionObjects, instructionCodeArea) {
 }
 
 function createInstruction(instructionObjects, instructionName, instructionCodeArea) {
-	if(instructionName == TURN_LEFT || instructionName == TURN_RIGHT)
-	    instructionObjects[instructionName] = instructionComponents[instructionName].createObject(instructionCodeArea, { "turnDirection": instructionName })
-	else
-	    instructionObjects[instructionName] = instructionComponents[instructionName].createObject(instructionCodeArea)
+    if(instructionName == TURN_LEFT || instructionName == TURN_RIGHT)
+        instructionObjects[instructionName] = instructionComponents[instructionName].createObject(instructionCodeArea, { "turnDirection": instructionName })
+    else
+        instructionObjects[instructionName] = instructionComponents[instructionName].createObject(instructionCodeArea)
 
-	instructionObjects[instructionName].foundDeadEnd.connect(instructionCodeArea.deadEnd)
-	instructionObjects[instructionName].executionComplete.connect(instructionCodeArea.checkSuccessAndExecuteNextInstruction)
+    instructionObjects[instructionName].foundDeadEnd.connect(instructionCodeArea.deadEnd)
+    instructionObjects[instructionName].executionComplete.connect(instructionCodeArea.checkSuccessAndExecuteNextInstruction)
 }
 
 // Destroy instruction objects from the look-up tables
@@ -301,7 +301,7 @@ function deadEnd() {
     items.isTuxMouseAreaEnabled = true
     items.constraintInstruction.show()
     items.audioEffects.play("qrc:/gcompris/src/core/resource/sounds/brick.wav")
-    items.bonus.bad("tux")
+    items.bonus.bad("flower")
 }
 
 function checkSuccessAndExecuteNextInstruction() {
@@ -313,7 +313,7 @@ function checkSuccessAndExecuteNextInstruction() {
 
     if(tuxX === fishX && tuxY === fishY) {
         codeIterator = 0
-        items.bonus.good("tux")
+        items.bonus.good("flower")
     }
     else if(codeIterator === (items.mainFunctionModel.count - 1)) {
         deadEnd()

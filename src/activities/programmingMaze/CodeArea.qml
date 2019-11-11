@@ -22,14 +22,16 @@
  */
 import QtQuick 2.6
 import GCompris 1.0
+import QtQuick 2.6
+import GCompris 1.0
 
 import "programmingMaze.js" as Activity
 
 GridView {
     id: codeArea
     z: 1
-    width: background.width * 0.4
-    height: background.height * 0.29
+    width: background.buttonWidth //largura da codearea
+    height: background.height * 0.5
     cellWidth: background.buttonWidth
     cellHeight: background.buttonHeight
 
