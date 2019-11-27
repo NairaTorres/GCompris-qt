@@ -34,6 +34,7 @@ ActivityBase {
     onStart: focus = true
     onStop: {}
 
+
     property int oldWidth: width
     onWidthChanged: {
         Activity.repositionObjectsOnWidthChanged(width / oldWidth)
@@ -240,13 +241,13 @@ ActivityBase {
                     y: modelData.y * height
                     width: background.width / 10
                     height: (background.height - background.height / 5) / 5
-                    source: Activity.url + "planeta3.svg"
+                    source: Activity.url + "planeta2.svg"
                 }
             }
 
             Image {
                 id: fish
-                sourceSize.width: background.width / 15
+                sourceSize.width: background.width / 7
                 source: Activity.url + "lua.svg"
             }
 

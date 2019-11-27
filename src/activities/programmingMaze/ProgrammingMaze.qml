@@ -225,16 +225,16 @@ ActivityBase {
                     x: modelData.x * width
                     y: modelData.y * height
                     width: background.width / 10
-                    height: (background.height - background.height / 10) / 10
-                    source: Activity.url + "grama.svg"
+                    height: (background.height - background.height / 8) / 8
+                    source: Activity.url + "mesa.svg"
                 }
             }
 
 
             Image { //imagem personagem alvo
                 id: fish
-                sourceSize.width: background.width / 10
-                source: Activity.url + "lama2.svg"
+                sourceSize.width: background.width / 20
+                source: Activity.url + "milhos.svg"
             }
 
             Image {//imagem personagem principal

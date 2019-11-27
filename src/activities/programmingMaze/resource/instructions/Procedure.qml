@@ -58,7 +58,7 @@ Instruction {
 
         if(tuxX === fishX && tuxY === fishY) {
             Activity.codeIterator = 0
-            parent.items.bonus.good("tux")
+            parent.items.bonus.good("flower")
         }
         else {
             checkAndExecuteMovement()

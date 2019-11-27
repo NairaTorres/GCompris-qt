@@ -38,9 +38,9 @@ Rectangle {//cabeçalho das instrucoes
 
     Image {
         width: parent.width - 2 * parent.border.width
-        height: parent.height - 2 * parent.border.width
+        height: parent.height  * parent.border.width
         anchors.centerIn: parent
-        source: "qrc:/gcompris/src/activities/programing_loop/resource/aurora.svg"
+        source: "qrc:/gcompris/src/activities/programing_loop/resource/areadeinstrucoes.svg"
         opacity: header.headerOpacity
 
 

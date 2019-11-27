@@ -39,7 +39,7 @@ Rectangle {//header area
         width: parent.width - 2 * parent.border.width
         height: parent.height - 2 * parent.border.width
         anchors.centerIn: parent
-        source: "qrc:/gcompris/src/activities/programmingMaze/resource/wood.svg"
+        source: "qrc:/gcompris/src/activities/programmingMaze/resource/wood1.svg"
         opacity: header.headerOpacity
 
         GCText {

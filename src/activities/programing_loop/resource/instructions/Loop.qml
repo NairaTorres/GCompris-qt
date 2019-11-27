@@ -72,7 +72,7 @@ Instruction {
 
         if(tuxX === fishX && tuxY === fishY) {//se tux chegou em peixe
             Activity.codeIterator = 0
-            parent.items.bonus.good("tux")
+            parent.items.bonus.good("star")
         }
         else {
             checkAndExecuteMovement()

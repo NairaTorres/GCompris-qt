@@ -74,6 +74,7 @@ var reverseCountUrl = "qrc:/gcompris/src/activities/reversecount/resource/"
 var currentLevel = 0
 var numberOfLevel
 var items
+var barAtStart
 
 var NORTH = 0
 var WEST = 90
@@ -129,12 +130,16 @@ function start(items_, mode_, datasetUrl_) {
     currentLevel = 0
     mazeBlocks = items.dataset.item.levels
     numberOfLevel = mazeBlocks.length
+    barAtStart = GCompris.ApplicationSettings.isBarHidden;
+    GCompris.ApplicationSettings.isBarHidden = true;
     resetTux = false
     initLevel()
 }
 
 function stop() {
     destroyInstructionObjects()
+    GCompris.ApplicationSettings.isBarHidden = barAtStart;
+
 }
 
 /**
